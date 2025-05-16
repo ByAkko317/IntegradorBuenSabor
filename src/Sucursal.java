@@ -4,17 +4,15 @@ import java.util.*;
 public class Sucursal {
     private String nombre;
     private LocalTime horarioApertura,horarioCierre;
-    private boolean es_casa_matriz;
 
     private Domicilio domicilio;
     private List<Categoria> categorias;
     private Set<Promocion> promociones;
 
-    public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre, boolean es_casa_matriz) {
+    public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre) {
         this.nombre = nombre;
         this.horarioApertura = horarioApertura;
         this.horarioCierre = horarioCierre;
-        this.es_casa_matriz = es_casa_matriz;
     }
 
     public String getNombre() {
@@ -39,14 +37,6 @@ public class Sucursal {
 
     public void setHorarioCierre(LocalTime horarioCierre) {
         this.horarioCierre = horarioCierre;
-    }
-
-    public boolean isEs_casa_matriz() {
-        return es_casa_matriz;
-    }
-
-    public void setEs_casa_matriz(boolean es_casa_matriz) {
-        this.es_casa_matriz = es_casa_matriz;
     }
 
     public Domicilio getDomicilio() {
@@ -77,5 +67,15 @@ public class Sucursal {
     public void addPromocion(Promocion promocion){
         if(this.promociones==null)this.promociones=new HashSet<>();
         if(promocion!=null)this.promociones.add(promocion);
+    }
+
+    @Override
+    public String toString() {
+        return "Sucursal{" +
+                "nombre='" + nombre + '\'' +
+                ", horarioApertura=" + horarioApertura +
+                ", horarioCierre=" + horarioCierre +
+                ", domicilio=" + domicilio +
+                '}';
     }
 }
