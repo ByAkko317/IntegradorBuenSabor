@@ -1,5 +1,5 @@
-public class Imagen {
-    private String nombre,url;
+public class Imagen extends Base{
+    private String nombre,url;//añadir id
 
     public Imagen(String nombre, String url) {
         this.nombre = nombre;
