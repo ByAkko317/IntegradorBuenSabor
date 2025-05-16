@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c4b1cc89-15f8-41bc-a391-8c94cc9c1ace" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DetallePedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DetallePedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domicilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domicilio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Localidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Localidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sucursal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Principal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "feature/giuliana",
@@ -52,6 +61,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Principal" />
+      <module name="IntegradorBuenSabor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Principal" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -2,16 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
-    private String nombre,razonSocial,logo;
-    private Integer cuit;
+    private String nombre,razonSocial;
+    private Integer cuil;
 
     private List<Sucursal> sucursales;
 
-    public Empresa(String nombre, String razonSocial, String logo, Integer cuit) {
+    public Empresa(String nombre, String razonSocial, Integer cuil) {
         this.nombre = nombre;
         this.razonSocial = razonSocial;
-        this.logo = logo;
-        this.cuit = cuit;
+        this.cuil = cuil;
     }
 
     public String getNombre() {
@@ -30,20 +29,10 @@ public class Empresa {
         this.razonSocial = razonSocial;
     }
 
-    public String getLogo() {
-        return logo;
-    }
+    public Integer getCuil() {return cuil;}
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
-    public Integer getCuit() {
-        return cuit;
-    }
-
-    public void setCuit(Integer cuit) {
-        this.cuit = cuit;
+    public void setCuil(Integer cuil) {
+        this.cuil = cuil;
     }
 
     public List<Sucursal> getSucursales() {
@@ -61,5 +50,15 @@ public class Empresa {
         if(sucursal != null){
             this.sucursales.add(sucursal);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "nombre='" + nombre + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", cuil=" + cuil +
+                ", sucursales=" + sucursales +
+                '}';
     }
 }
