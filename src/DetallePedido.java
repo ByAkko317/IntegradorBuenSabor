@@ -3,7 +3,6 @@ public class DetallePedido {
     private Double subtotal;
 
     private Articulo articulo;
-    private Pedido pedido;
 
     public DetallePedido() {
     }
@@ -38,11 +37,4 @@ public class DetallePedido {
         this.articulo = articulo;
     }
 
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
 }
