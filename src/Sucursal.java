@@ -1,6 +1,5 @@
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Sucursal {
     private String nombre;
@@ -9,6 +8,7 @@ public class Sucursal {
 
     private Domicilio domicilio;
     private List<Categoria> categorias;
+    private Set<Promocion> promociones;
 
     public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre, boolean es_casa_matriz) {
         this.nombre = nombre;
@@ -72,5 +72,10 @@ public class Sucursal {
         if(categoria!=null){
             this.categorias.add(categoria);
         }
+    }
+
+    public void addPromocion(Promocion promocion){
+        if(this.promociones==null)this.promociones=new HashSet<>();
+        if(promocion!=null)this.promociones.add(promocion);
     }
 }
