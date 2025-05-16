@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Articulo {
+public class Articulo extends Base{
     private String denominacion,codigo;
     private Double precioVenta;
     private boolean habilitado;
