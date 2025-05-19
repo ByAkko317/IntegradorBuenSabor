@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Articulo extends Base{
-    private String denominacion,codigo;
-    private Double precioVenta;
-    private boolean habilitado;
+public abstract class Articulo {
+    protected String denominacion,codigo;
+    protected Double precioVenta;
+    protected boolean habilitado;
+
 
     private List<Imagen> imagenes;
 
@@ -14,6 +15,8 @@ public class Articulo extends Base{
         this.precioVenta = precioVenta;
         this.habilitado = habilitado;
     }
+
+
 
     public String getDenominacion() {
         return denominacion;
@@ -39,7 +42,7 @@ public class Articulo extends Base{
         this.precioVenta = precioVenta;
     }
 
-    public boolean isHabilitado() {
+    public boolean getHabilitado() {
         return habilitado;
     }
 
@@ -55,11 +58,14 @@ public class Articulo extends Base{
         this.imagenes = imagenes;
     }
 
-    public void addImagen(Imagen imagen){
-        if(this.imagenes==null) this.imagenes=new ArrayList<>();
-        if(imagenes!=null) this.imagenes.add(imagen);
+    public void addImagen(Imagen imagen) {
+        if (this.imagenes == null) this.imagenes = new ArrayList<>();
+        if (imagenes != null) this.imagenes.add(imagen);
     }
 
-    public void removeImagen(Imagen imagen){}
-
+    public void removeImagen(Imagen imagen) {
+        if (imagen != null) {
+            imagenes.remove(imagen);
+        }
+    }
 }

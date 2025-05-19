@@ -1,3 +1,4 @@
+
 public class ArticuloInsumo extends Articulo{
     private Double precioCompra;
     private Integer stockActual, stockMinimo;
