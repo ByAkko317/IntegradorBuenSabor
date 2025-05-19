@@ -26,7 +26,6 @@ public class Principal {
         Empresa empresa=new Empresa("Smash Burgers","Smash Burgers S.A.",332084567);
         empresa.addSucursal(suc1);
         empresa.addSucursal(suc2);
-
         System.out.println(empresa);
     }
 }
