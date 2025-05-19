@@ -1,19 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ArticuloManufacturado extends Articulo {
     private String descripcion;
     private int tiempoEstimadoMinutos;
     private String preparacion;
 
-    private List<ArticuloManufacturadoDetalle> detalles;
+    private Set<ArticuloManufacturadoDetalle> detalles;
 
     public ArticuloManufacturado(String denominacion, String codigo, Double precioVenta, boolean habilitado,String descripcion, int tiempoEstimadoMinutos, String preparacion) {
         super(denominacion, codigo, precioVenta, habilitado);
         this.descripcion = descripcion;
         this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
         this.preparacion = preparacion;
-        this.detalles = new ArrayList<>();
+        this.detalles = new HashSet<>();
     }
 
     public String getDescripcion() {
@@ -40,19 +40,20 @@ public class ArticuloManufacturado extends Articulo {
         this.preparacion = preparacion;
     }
 
-    public List<ArticuloManufacturadoDetalle> getDetalles() {
+    public Set<ArticuloManufacturadoDetalle> getDetalles() {
         return detalles;
     }
 
-    public void setDetalles(List<ArticuloManufacturadoDetalle> detalles) {
+    public void setDetalles(Set<ArticuloManufacturadoDetalle> detalles) {
         this.detalles = detalles;
     }
 
     public void addDetalle(ArticuloManufacturadoDetalle detalle) {
-            detalles.add(detalle);
+        if(detalle != null) detalles.add(detalle);
     }
 
     public void removeDetalle(ArticuloManufacturadoDetalle detalle) {
-            detalles.remove(detalle);
+        if(this.detalles.contains(detalle))this.detalles.remove(detalle);
     }
+
 }

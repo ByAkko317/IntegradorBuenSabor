@@ -1,12 +1,14 @@
 import java.util.ArrayList;
-import java.util.List;
 
-public class Categoria {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Categoria extends Base{
     private String denominacion;
 
-    private List<Categoria> subCategorias;//=new ArrayList<>();
+    private Set<Categoria> subCategorias;//=new ArrayList<>();
     private Categoria categoriaPadre;
-    private List<Articulo> articulos;
+    private Set<Articulo> articulos;
 
     public Categoria(String denominacion) {
         this.denominacion = denominacion;
@@ -20,11 +22,11 @@ public class Categoria {
         this.denominacion = denominacion;
     }
 
-    public List<Categoria> getSubCategorias() {
+    public Set<Categoria> getSubCategorias() {
         return subCategorias;
     }
 
-    public void setSubCategorias(List<Categoria> subCategorias) {
+    public void setSubCategorias(Set<Categoria> subCategorias) {
         this.subCategorias = subCategorias;
     }
 
@@ -36,16 +38,16 @@ public class Categoria {
         this.categoriaPadre = categoriaPadre;
     }
 
-    public List<Articulo> getArticulos() {
+    public Set<Articulo> getArticulos() {
         return articulos;
     }
 
-    public void setArticulos(List<Articulo> articulos) {
+    public void setArticulos(Set<Articulo> articulos) {
         this.articulos = articulos;
     }
 
     public void addCategoria(Categoria categoria){
-        if (this.subCategorias==null)this.subCategorias=new ArrayList<>();
+        if (this.subCategorias==null)this.subCategorias=new HashSet<>();
         if (categoria!=null)this.subCategorias.add(categoria);
         categoria.setCategoriaPadre(this);
     }
@@ -56,9 +58,11 @@ public class Categoria {
     }
 
     public void addArticulo(Articulo articulo){
-        if(this.articulos==null) this.articulos=new ArrayList<>();
+        if(this.articulos==null) this.articulos=new HashSet<>();
         if(articulo!=null) this.articulos.add(articulo);
     }
-    public void removeArticulo(Articulo articulo){}
+    public void removeArticulo(Articulo articulo){
+        if(this.articulos.contains(articulo))this.articulos.remove(articulo);
+    }
 
 }
