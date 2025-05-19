@@ -1,19 +1,19 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Cliente {
+public class Cliente extends Base{
     private String nombre;
     private String apellido;
     private String telefono;
     private String email;
     private LocalDate fechaNacimiento;
 
-    private Imagen imagen;
+    private ImagenCliente imagen;
     private Usuario usuario;
 
-    private List<Pedido> pedidos;
-    private List<Domicilio> domicilios;
+    private Set <Pedido> pedidos;
+    private Set <Domicilio> domicilios;
 
     public Cliente() {
     }
@@ -67,11 +67,11 @@ public class Cliente {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Imagen getImagen() {
+    public ImagenCliente getImagen() {
         return imagen;
     }
 
-    public void setImagen(Imagen imagen) {
+    public void setImagen(ImagenCliente imagen) {
         this.imagen = imagen;
     }
 
@@ -83,27 +83,37 @@ public class Cliente {
         this.usuario = usuario;
     }
 
-    public List<Pedido> getPedidos() {
+    //getter setter pedidos, add y remove
+    public Set<Pedido> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
+    public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
     public void addPedido(Pedido pedido){
-        if(this.pedidos==null) {this.pedidos=new ArrayList<>();}
+        if(this.pedidos==null) this.pedidos=new HashSet<>();
         this.pedidos.add(pedido);
     }
 
-    public List<Domicilio> getDomicilios() {
+    public void removePedido(Pedido pedido){
+        if(this.pedidos.contains(pedido))this.pedidos.remove(pedido);
+    }
+
+    //getter setter domicilios, add y remove
+    public Set<Domicilio> getDomicilios() {
         return domicilios;
     }
 
-    public void setDomicilios(List<Domicilio> domicilios) {
-        this.domicilios = domicilios;
-    }
+    public void setDomicilios(Set<Domicilio> domicilios) {this.domicilios = domicilios;}
+
     public void addDomicilio(Domicilio domicilio){
-        if(this.domicilios==null) {this.domicilios=new ArrayList<>();}
+        if(this.domicilios==null) {this.domicilios=new HashSet<>();}
         this.domicilios.add(domicilio);
+    }
+
+    public void removeDomicilio(Domicilio domicilio){
+        if(this.domicilios.contains(domicilio))this.domicilios.remove(domicilio);
     }
 }

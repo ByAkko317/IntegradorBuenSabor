@@ -1,11 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Empresa {
+public class Empresa extends Base{
     private String nombre,razonSocial;
     private Integer cuil;
 
-    private List<Sucursal> sucursales;
+    private Set<Sucursal> sucursales;
 
     public Empresa(String nombre, String razonSocial, Integer cuil) {
         this.nombre = nombre;
@@ -35,21 +35,21 @@ public class Empresa {
         this.cuil = cuil;
     }
 
-    public List<Sucursal> getSucursales() {
+    public Set<Sucursal> getSucursales() {
         return sucursales;
     }
 
-    public void setSucursales(List<Sucursal> sucursales) {
+    public void setSucursales(Set<Sucursal> sucursales) {
         this.sucursales = sucursales;
     }
 
     public void addSucursal(Sucursal sucursal){
-        if(this.sucursales==null){
-            this.sucursales=new ArrayList<>();
-        }
-        if(sucursal != null){
-            this.sucursales.add(sucursal);
-        }
+        if(this.sucursales==null) this.sucursales=new HashSet<>();
+        if(sucursal != null) this.sucursales.add(sucursal);
+    }
+
+    public void removeSucursal(Sucursal sucursal){
+        if(this.sucursales.contains(sucursal)) this.sucursales.remove(sucursal);
     }
 
     @Override

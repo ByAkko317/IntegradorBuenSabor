@@ -1,7 +1,9 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-public class Promocion {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Promocion extends Base{
 
     private String denominacion;
     private LocalDate fechaDesde,fechaHasta;
@@ -9,12 +11,12 @@ public class Promocion {
     private String descripcionDescuento;
     private Double precioPromocional;
     private TipoPromocion tipoPromocion;
-    private ArrayList<Imagen> imagenes ;
-    private ArrayList<Articulo> articulos;
+    private Set<ImagenPromocion> imagenes ;
+    private Set<Articulo> articulos;
 
     public Promocion(){
-        this.imagenes = new ArrayList<Imagen>();
-        this.articulos = new ArrayList<Articulo>();
+        this.imagenes = new HashSet<ImagenPromocion>();
+        this.articulos = new HashSet<Articulo>();
     }
 
     public Promocion(String denominacion, LocalDate fechaDesde, LocalDate fechaHasta, LocalTime horaDesde, LocalTime horaHasta, String descripcionDescuento, Double precioPromocional, TipoPromocion tipoPromocion) {
@@ -26,8 +28,8 @@ public class Promocion {
         this.descripcionDescuento = descripcionDescuento;
         this.precioPromocional = precioPromocional;
         this.tipoPromocion = tipoPromocion;
-        this.imagenes = new ArrayList<Imagen>();
-        this.articulos = new ArrayList<Articulo>();
+        this.imagenes = new HashSet<ImagenPromocion>();
+        this.articulos = new HashSet<Articulo>();
     }
 
     public String getDenominacion() {return denominacion;}
@@ -62,18 +64,18 @@ public class Promocion {
 
     public void setTipoPromocion(TipoPromocion tipoPromocion) {this.tipoPromocion = tipoPromocion;}
 
-    public ArrayList<Imagen> getImagenes() {return imagenes;}
+    public Set<ImagenPromocion> getImagenes() {return imagenes;}
 
-    public void setImagenes(ArrayList<Imagen> imagenes) {this.imagenes = imagenes;}
+    public void setImagenes(HashSet<ImagenPromocion> imagenes) {this.imagenes = imagenes;}
 
-    public ArrayList<Articulo> getArticulos() {return articulos;}
+    public Set<Articulo> getArticulos() {return articulos;}
 
-    public void setArticulos(ArrayList<Articulo> articulos) {this.articulos = articulos;}
+    public void setArticulos(HashSet<Articulo> articulos) {this.articulos = articulos;}
 
-    public void addImagen(Imagen imagen){
+    public void addImagen(ImagenPromocion imagen){
         this.imagenes.add(imagen);
     }
-    public void removeImagen(Imagen imagen){
+    public void removeImagen(ImagenPromocion imagen){
         if(this.imagenes!=null && this.imagenes.contains(imagen))this.imagenes.remove(imagen);
     }
     public void addArticulo(Articulo articulo){

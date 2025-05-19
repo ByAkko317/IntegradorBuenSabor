@@ -1,4 +1,4 @@
-public class Provincia {
+public class Provincia extends Base{
     private String nombre;
 
     private Pais pais;

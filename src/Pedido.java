@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Pedido {
+public class Pedido extends Base {
     private LocalTime horaEstimadaFinalizacion;
     private Double total;
     private Double totalCosto;
@@ -16,7 +16,7 @@ public class Pedido {
     private Sucursal sucursal;
     private Factura factura;
 
-    private List<DetallePedido> detallesPedido;
+    private Set<DetallePedido> detallesPedido;
 
     public Pedido() {
     }
@@ -114,16 +114,20 @@ public class Pedido {
         this.factura = factura;
     }
 
-    public List<DetallePedido> getDetallePedido() {
+    public Set<DetallePedido> getDetallePedido() {
         return detallesPedido;
     }
 
-    public void setDetallePedido(List<DetallePedido> detallePedido) {
+    public void setDetallePedido(Set<DetallePedido> detallePedido) {
         this.detallesPedido = detallePedido;
     }
 
     public void addDetallePedido(DetallePedido detallePedido){
-        if(this.detallesPedido==null) this.detallesPedido=new ArrayList<>();
+        if(this.detallesPedido==null) this.detallesPedido=new HashSet<>();
         this.detallesPedido.add(detallePedido);
+    }
+
+    public void removeDetallePedido(DetallePedido detallePedido){
+        if(this.detallesPedido.contains(detallePedido))this.detallesPedido.remove(detallePedido);
     }
 }

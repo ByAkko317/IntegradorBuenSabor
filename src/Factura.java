@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Factura {
+public class Factura extends Base{
     private String mpPreferenceId, mpPaymentType;
     private Integer mpPaymentId, mpMerchantOrderId;
     private FormaPago formaPago;
