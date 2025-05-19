@@ -6,6 +6,7 @@ public abstract class Articulo {
     protected Double precioVenta;
     protected boolean habilitado;
 
+
     private List<Imagen> imagenes;
 
     public Articulo(String denominacion, String codigo, Double precioVenta, boolean habilitado) {

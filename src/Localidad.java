@@ -22,4 +22,12 @@ public class Localidad {
     public void setProvincia(Provincia provincia) {
         this.provincia = provincia;
     }
+
+    @Override
+    public String toString() {
+        return "Localidad{" +
+                "nombre='" + nombre + '\'' +
+                ", provincia=" + provincia +
+                '}';
+    }
 }

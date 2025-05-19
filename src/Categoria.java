@@ -48,9 +48,8 @@ public class Categoria {
         if (this.subCategorias==null)this.subCategorias=new ArrayList<>();
         if (categoria!=null)this.subCategorias.add(categoria);
         categoria.setCategoriaPadre(this);
-
-        System.out.println("La categoria que llama "+this.denominacion+ " asocia/agrega a su hija "+categoria.denominacion);
     }
+
     public void removeSubCategoria(Categoria subCategoria){
         if(this.subCategorias.contains(subCategoria))this.subCategorias.remove(subCategoria);
         subCategoria.setCategoriaPadre(null);
