@@ -107,6 +107,6 @@ public class Principal {
         //Agregamos Promocion a Sucursal
         suc1.addPromocion(promocion1);
 
-        
+
     }
 }
