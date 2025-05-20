@@ -21,7 +21,7 @@ public class Pedido extends Base {
     public Pedido() {
     }
 
-    public Pedido(LocalTime horaEstimadaFinalizacion, Double total, Double totalCosto, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido, Domicilio domicilio, Sucursal sucursal, Factura factura, List<DetallePedido> detallePedido) {
+    public Pedido(LocalTime horaEstimadaFinalizacion, Double total, Double totalCosto, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido) {
         this.horaEstimadaFinalizacion = horaEstimadaFinalizacion;
         this.total = total;
         this.totalCosto = totalCosto;
@@ -29,9 +29,6 @@ public class Pedido extends Base {
         this.tipoEnvio = tipoEnvio;
         this.formaPago = formaPago;
         this.fechaPedido = fechaPedido;
-        this.domicilio = domicilio;
-        this.sucursal = sucursal;
-        this.factura = factura;
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {

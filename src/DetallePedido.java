@@ -7,10 +7,8 @@ public class DetallePedido extends Base{
     public DetallePedido() {
     }
 
-    public DetallePedido(Integer cantidad, Articulo articulo) {
+    public DetallePedido(Integer cantidad) {
         this.cantidad = cantidad;
-        this.articulo=articulo;
-        this.subtotal= cantidad * articulo.getPrecioVenta();
     }
 
     public Integer getCantidad() {
@@ -21,12 +19,10 @@ public class DetallePedido extends Base{
         this.cantidad = cantidad;
     }
 
-    public Double getSubtotal() {
-        return subtotal;
-    }
+    public Double getSubtotal() { return subtotal;}
 
-    public void setSubtotal(Double subtotal) {
-        this.subtotal = subtotal;
+    public void setSubtotal(Articulo articulo) {
+        this.subtotal= cantidad * articulo.getPrecioVenta();
     }
 
     public Articulo getArticulo() {

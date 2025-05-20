@@ -1,3 +1,3 @@
 public enum Estado {
-    preparacion, pendiente, cancelado, rechazado, entregado;
+    PREPARACION, PENDIENTE, CANCELADO, RECHAZADO, ENTREGADO
 }

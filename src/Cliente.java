@@ -18,13 +18,12 @@ public class Cliente extends Base{
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido, String telefono, String email, LocalDate fechaNacimiento, Imagen imagen) {
+    public Cliente(String nombre, String apellido, String telefono, String email, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
         this.fechaNacimiento = fechaNacimiento;
-        this.imagen = imagen;
     }
 
     public String getNombre() {
