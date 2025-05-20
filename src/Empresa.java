@@ -1,6 +1,8 @@
 import java.util.HashSet;
 import java.util.Set;
 
+
+
 public class Empresa extends Base{
     private String nombre,razonSocial;
     private Integer cuil;
