@@ -6,6 +6,7 @@ public abstract class Articulo extends Base{
     protected String denominacion,codigo;
     protected Double precioVenta;
     protected boolean habilitado;
+    protected UnidadMedida unidadMedida;
 
 
     private Set<ImagenArticulo> imagenes;
@@ -56,6 +57,18 @@ public abstract class Articulo extends Base{
 
     public void setImagenes(Set<ImagenArticulo> imagenes) {
         this.imagenes = imagenes;
+    }
+
+    public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public UnidadMedida getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(UnidadMedida unidadMedida) {
+        this.unidadMedida = unidadMedida;
     }
 
     public void addImagen(ImagenArticulo imagen) {
