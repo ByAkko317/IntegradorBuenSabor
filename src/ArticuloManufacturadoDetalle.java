@@ -21,4 +21,8 @@ public class ArticuloManufacturadoDetalle {
     public void setArticuloInsumo(ArticuloInsumo articuloInsumo) {
         this.articuloInsumo = articuloInsumo;
     }
+
+    public double costoTotal(){
+        return articuloInsumo.getPrecioCompra()*cantidad;
+    }
 }

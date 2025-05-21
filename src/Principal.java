@@ -33,9 +33,10 @@ public class Principal {
         Factura factura2 = new Factura(10000.00, FormaPago.EFECTIVO, LocalDate.now());
 
         //Instanciamos el pedido
-        Pedido pedido = new Pedido(LocalTime.of(10, 30), 34000.00, 1000.00, Estado.PENDIENTE, TipoEnvio.DELIVERY, FormaPago.EFECTIVO, LocalDate.now());
+//        Pedido pedido = new Pedido(LocalTime.of(10, 30), detalle, 1000.00, Estado.PENDIENTE, TipoEnvio.DELIVERY, FormaPago.EFECTIVO, LocalDate.now());
         //Instanciamos el detalle pedido
         DetallePedido detalle = new DetallePedido(2);
+        Pedido pedido = new Pedido(LocalTime.of(10, 30), /*1000.00, 1000.00,*/ Estado.PENDIENTE, TipoEnvio.DELIVERY, FormaPago.EFECTIVO, LocalDate.now());
         //Agregamos el detalle al pedido
         pedido.addDetallePedido(detalle);
         //Agregamos domicilio al pedido
@@ -43,16 +44,21 @@ public class Principal {
         //Agregamos la sucursal al pedido
         pedido.setSucursal(suc1);
 
+
         //Instanciamos los artículos
         ArticuloManufacturado articuloManufacturado1 = new ArticuloManufacturado("Hamburguesa", "1500", 1000.00, true, "Hamburguesa con queso, tomate y lechuga", 18, "Coccion media");
         //Instanciamos los detalles de los articulos manufacturados
         ArticuloManufacturadoDetalle detalleArticuloManufacturado1 = new ArticuloManufacturadoDetalle(1);
         ArticuloManufacturadoDetalle detalleArticuloManufacturado2 = new ArticuloManufacturadoDetalle(2);
         //Instanciamos ArticuloInsumo
-        ArticuloInsumo articuloInsumo1 = new ArticuloInsumo("Queso", "100", 100.00, true, 7000.00, 15, 5, 25, false);
+        ArticuloInsumo articuloInsumo1 = new ArticuloInsumo("Queso", "100", 100.00, true, 50.00, 15, 5, 25, true);
+        ArticuloInsumo articuloInsumo2= new ArticuloInsumo("carne","101",300.00,true,120.00,30,4,50,true);
+        ArticuloInsumo articuloInsumo3= new ArticuloInsumo("cerveza","200",150.00,true,60.00,20,2,30,false);
         detalleArticuloManufacturado1.setArticuloInsumo(articuloInsumo1);
         articuloManufacturado1.addDetalle(detalleArticuloManufacturado1);
         articuloManufacturado1.addDetalle(detalleArticuloManufacturado2);
+
+        detalle.setArticulo(articuloManufacturado1);
 
         //Instanciamos imagenes para articulo
         ImagenArticulo imgArticulo1 = new ImagenArticulo("Fachada del Restaurante", "imagen.jpg");
