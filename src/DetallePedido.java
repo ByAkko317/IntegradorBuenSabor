@@ -9,6 +9,7 @@ public class DetallePedido extends Base{
 
     public DetallePedido(Integer cantidad) {
         this.cantidad = cantidad;
+        this.subtotal = subtotal();
     }
 
     public Integer getCantidad() {
@@ -31,6 +32,14 @@ public class DetallePedido extends Base{
 
     public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
+    }
+
+    public double subtotal() {
+        if(articulo != null) {
+            return cantidad * articulo.precioVenta;
+        }else{
+            return 0;
+        }
     }
 
 }

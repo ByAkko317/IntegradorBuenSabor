@@ -21,14 +21,14 @@ public class Pedido extends Base {
     public Pedido() {
     }
 
-    public Pedido(LocalTime horaEstimadaFinalizacion, Double total, Double totalCosto, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido) {
+    public Pedido(LocalTime horaEstimadaFinalizacion, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido) {
         this.horaEstimadaFinalizacion = horaEstimadaFinalizacion;
-        this.total = total;
-        this.totalCosto = totalCosto;
         this.estado = estado;
         this.tipoEnvio = tipoEnvio;
         this.formaPago = formaPago;
         this.fechaPedido = fechaPedido;
+        this.total = 0.0;
+        this.totalCosto = 0.0;
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {
@@ -43,9 +43,7 @@ public class Pedido extends Base {
         return total;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
-    }
+    public void setTotal(Double total) { this.total = total;}
 
     public Double getTotalCosto() {
         return totalCosto;
@@ -126,5 +124,19 @@ public class Pedido extends Base {
 
     public void removeDetallePedido(DetallePedido detallePedido){
         if(this.detallesPedido.contains(detallePedido))this.detallesPedido.remove(detallePedido);
+    }
+    public double calcularTotal(){
+        double total = 0;
+        for (DetallePedido detalle : detallesPedido) {
+            total+=detalle.getSubtotal();
+        }
+        return total*1.5;
+    }
+    public double totalCosto(){
+        double totalCosto=0;
+        for (DetallePedido detalle : detallesPedido) {
+            //totalCosto += detalle.getArticulo().precioVenta();//necesito acceder al metodo costo total de ArticuloManufacturadoDetalle
+        }
+        return totalCosto;
     }
 }
