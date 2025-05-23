@@ -35,7 +35,11 @@ public class DetallePedido extends Base{
     }
 
     public double subtotal() {
-        return cantidad * articulo.precioVenta;
+        if(articulo != null) {
+            return cantidad * articulo.precioVenta;
+        }else{
+            return 0;
+        }
     }
 
 }
