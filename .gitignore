@@ -26,4 +26,7 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store.idea/ 
+.DS_Store
+
+### IntelliJ IDEA ###
+.idea/

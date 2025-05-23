@@ -1,8 +1,9 @@
 public class ImagenPromocion extends Base{
-    private String denominacion;
+    private String denominacion,url;
 
-    public ImagenPromocion(String denominacion) {
+    public ImagenPromocion(String denominacion, String url) {
         this.denominacion = denominacion;
+        this.url = url;
     }
 
     public String getDenominacion() {
