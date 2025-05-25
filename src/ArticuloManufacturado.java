@@ -56,4 +56,14 @@ public class ArticuloManufacturado extends Articulo {
         if(this.detalles.contains(detalle))this.detalles.remove(detalle);
     }
 
+    public double getCostoTotal() {
+        double costoTotal = 0;
+        for (ArticuloManufacturadoDetalle detalle : detalles) {
+            ArticuloInsumo insumo = detalle.getArticuloInsumo();
+            costoTotal += detalle.getCantidad() * insumo.getPrecioCompra();
+        }
+        return costoTotal;
+    }
+
+
 }

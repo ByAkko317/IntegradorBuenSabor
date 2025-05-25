@@ -29,6 +29,7 @@ public class Pedido extends Base {
         this.fechaPedido = fechaPedido;
         this.total = 0.0;
         this.totalCosto = 0.0;
+        this.detallesPedido = new HashSet<>();
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {
@@ -43,7 +44,9 @@ public class Pedido extends Base {
         return total;
     }
 
-    public void setTotal(Double total) { this.total = total;}
+    public void setTotal(Double total) {
+        this.total = total;
+    }
 
     public Double getTotalCosto() {
         return totalCosto;
@@ -117,25 +120,19 @@ public class Pedido extends Base {
         this.detallesPedido = detallePedido;
     }
 
-    public void addDetallePedido(DetallePedido detallePedido){
-        if(this.detallesPedido==null) this.detallesPedido=new HashSet<>();
+    public void addDetallePedido(DetallePedido detallePedido) {
+        if (this.detallesPedido == null) this.detallesPedido = new HashSet<>();
         this.detallesPedido.add(detallePedido);
     }
 
-    public void removeDetallePedido(DetallePedido detallePedido){
-        if(this.detallesPedido.contains(detallePedido))this.detallesPedido.remove(detallePedido);
+    public void removeDetallePedido(DetallePedido detallePedido) {
+        if (this.detallesPedido.contains(detallePedido)) this.detallesPedido.remove(detallePedido);
     }
-    public double calcularTotal(){
-        double total = 0;
+
+    public double totalCosto() {
+        double totalCosto = 0;
         for (DetallePedido detalle : detallesPedido) {
-            total+=detalle.getSubtotal();
-        }
-        return total*1.5;
-    }
-    public double totalCosto(){
-        double totalCosto=0;
-        for (DetallePedido detalle : detallesPedido) {
-            //totalCosto += detalle.getArticulo().precioVenta();//necesito acceder al metodo costo total de ArticuloManufacturadoDetalle
+            totalCosto += detalle.getCosto();
         }
         return totalCosto;
     }
