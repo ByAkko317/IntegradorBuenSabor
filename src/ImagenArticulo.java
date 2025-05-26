@@ -22,3 +22,4 @@ public class ImagenArticulo extends Base{
         this.url = url;
     }
 }
+

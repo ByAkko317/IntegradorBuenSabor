@@ -35,7 +35,7 @@ public abstract class Articulo extends Base{
         this.codigo = codigo;
     }
 
-    public Double getPrecioVenta() {
+    public double getPrecioVenta() {
         return precioVenta;
     }
 
@@ -79,4 +79,6 @@ public abstract class Articulo extends Base{
     public void removeImagen(ImagenArticulo imagen) {
         if (this.imagenes.contains(imagen))this.imagenes.remove(imagen);
     }
+
+
 }

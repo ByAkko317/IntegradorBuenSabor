@@ -1,3 +1,7 @@
+/*@SuperBuilder
+ * @Getter
+ * @Setter
+ */
 public class Base {
     private Long id;
     private boolean eliminado=false;
