@@ -13,10 +13,12 @@ public class Promocion extends Base{
     private TipoPromocion tipoPromocion;
     private Set<ImagenPromocion> imagenes ;
     private Set<Articulo> articulos;
+    private Set<DetallePedido> detallePedidos;
 
     public Promocion(){
         this.imagenes = new HashSet<ImagenPromocion>();
         this.articulos = new HashSet<Articulo>();
+        this.detallePedidos = new HashSet<DetallePedido>();
     }
 
     public Promocion(String denominacion, LocalDate fechaDesde, LocalDate fechaHasta, LocalTime horaDesde, LocalTime horaHasta, String descripcionDescuento, Double precioPromocional, TipoPromocion tipoPromocion) {
@@ -30,6 +32,7 @@ public class Promocion extends Base{
         this.tipoPromocion = tipoPromocion;
         this.imagenes = new HashSet<ImagenPromocion>();
         this.articulos = new HashSet<Articulo>();
+        this.detallePedidos = new HashSet<DetallePedido>();
     }
 
     public String getDenominacion() {return denominacion;}
@@ -83,5 +86,11 @@ public class Promocion extends Base{
     }
     public void removeArticulo(Articulo articulo){
         if(this.articulos!=null && this.articulos.contains(articulo))this.articulos.remove(articulo);
+    }
+    public void addDetallePedido(DetallePedido detallePedido){
+        this.detallePedidos.add(detallePedido);
+    }
+    public void removeDetallePedido(DetallePedido detallePedido){
+        if(this.detallePedidos!=null && this.detallePedidos.contains(detallePedido))this.detallePedidos.remove(detallePedido);
     }
 }
