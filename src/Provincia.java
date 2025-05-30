@@ -1,4 +1,4 @@
-public class Provincia {
+public class Provincia extends Base{
     private String nombre;
 
     private Pais pais;
@@ -21,5 +21,13 @@ public class Provincia {
 
     public void setPais(Pais pais) {
         this.pais = pais;
+    }
+
+    @Override
+    public String toString() {
+        return "Provincia{" +
+                "nombre='" + nombre + '\'' +
+                ", pais=" + pais +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-public class Localidad {
+public class Localidad extends Base{
     private String nombre;
 
     private Provincia provincia;
@@ -21,5 +21,13 @@ public class Localidad {
 
     public void setProvincia(Provincia provincia) {
         this.provincia = provincia;
+    }
+
+    @Override
+    public String toString() {
+        return "Localidad{" +
+                "nombre='" + nombre + '\'' +
+                ", provincia=" + provincia +
+                '}';
     }
 }

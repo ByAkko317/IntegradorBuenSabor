@@ -1,12 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
 
-public class Articulo {
-    private String denominacion,codigo;
-    private Double precioVenta;
-    private boolean habilitado;
+import java.util.HashSet;
+import java.util.Set;
 
-    private List<Imagen> imagenes;
+public abstract class Articulo extends Base{
+    protected String denominacion,codigo;
+    protected Double precioVenta;
+    protected boolean habilitado;
+    protected UnidadMedida unidadMedida;
+
+
+    private Set<ImagenArticulo> imagenes;
 
     public Articulo(String denominacion, String codigo, Double precioVenta, boolean habilitado) {
         this.denominacion = denominacion;
@@ -14,6 +17,7 @@ public class Articulo {
         this.precioVenta = precioVenta;
         this.habilitado = habilitado;
     }
+
 
     public String getDenominacion() {
         return denominacion;
@@ -31,7 +35,7 @@ public class Articulo {
         this.codigo = codigo;
     }
 
-    public Double getPrecioVenta() {
+    public double getPrecioVenta() {
         return precioVenta;
     }
 
@@ -39,7 +43,7 @@ public class Articulo {
         this.precioVenta = precioVenta;
     }
 
-    public boolean isHabilitado() {
+    public boolean getHabilitado() {
         return habilitado;
     }
 
@@ -47,19 +51,34 @@ public class Articulo {
         this.habilitado = habilitado;
     }
 
-    public List<Imagen> getImagenes() {
+    public Set<ImagenArticulo> getImagenes() {
         return imagenes;
     }
 
-    public void setImagenes(List<Imagen> imagenes) {
+    public void setImagenes(Set<ImagenArticulo> imagenes) {
         this.imagenes = imagenes;
     }
 
-    public void addImagen(Imagen imagen){
-        if(this.imagenes==null) this.imagenes=new ArrayList<>();
-        if(imagenes!=null) this.imagenes.add(imagen);
+    public boolean isHabilitado() {
+        return habilitado;
     }
 
-    public void removeImagen(Imagen imagen){}
+    public UnidadMedida getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(UnidadMedida unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
+
+    public void addImagen(ImagenArticulo imagen) {
+        if (this.imagenes == null) this.imagenes = new HashSet<>();
+        if (imagenes != null) this.imagenes.add(imagen);
+    }
+
+    public void removeImagen(ImagenArticulo imagen) {
+        if (this.imagenes.contains(imagen))this.imagenes.remove(imagen);
+    }
+
 
 }

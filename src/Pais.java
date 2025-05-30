@@ -1,4 +1,4 @@
-public class Pais {
+public class Pais extends Base{
     private String nombre;
 
     public Pais(String nombre) {
@@ -11,5 +11,12 @@ public class Pais {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Pais{" +
+                "nombre='" + nombre + '\'' +
+                '}';
     }
 }

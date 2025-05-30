@@ -1,17 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Empresa {
-    private String nombre,razonSocial,logo;
-    private Integer cuit;
 
-    private List<Sucursal> sucursales;
 
-    public Empresa(String nombre, String razonSocial, String logo, Integer cuit) {
+public class Empresa extends Base{
+    private String nombre,razonSocial;
+    private Integer cuil;
+
+    private Set<Sucursal> sucursales;
+
+    public Empresa(String nombre, String razonSocial, Integer cuil) {
         this.nombre = nombre;
         this.razonSocial = razonSocial;
-        this.logo = logo;
-        this.cuit = cuit;
+        this.cuil = cuil;
     }
 
     public String getNombre() {
@@ -30,36 +31,36 @@ public class Empresa {
         this.razonSocial = razonSocial;
     }
 
-    public String getLogo() {
-        return logo;
+    public Integer getCuil() {return cuil;}
+
+    public void setCuil(Integer cuil) {
+        this.cuil = cuil;
     }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
-    public Integer getCuit() {
-        return cuit;
-    }
-
-    public void setCuit(Integer cuit) {
-        this.cuit = cuit;
-    }
-
-    public List<Sucursal> getSucursales() {
+    public Set<Sucursal> getSucursales() {
         return sucursales;
     }
 
-    public void setSucursales(List<Sucursal> sucursales) {
+    public void setSucursales(Set<Sucursal> sucursales) {
         this.sucursales = sucursales;
     }
 
     public void addSucursal(Sucursal sucursal){
-        if(this.sucursales==null){
-            this.sucursales=new ArrayList<>();
-        }
-        if(sucursal != null){
-            this.sucursales.add(sucursal);
-        }
+        if(this.sucursales==null) this.sucursales=new HashSet<>();
+        if(sucursal != null) this.sucursales.add(sucursal);
+    }
+
+    public void removeSucursal(Sucursal sucursal){
+        if(this.sucursales.contains(sucursal)) this.sucursales.remove(sucursal);
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "nombre='" + nombre + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", cuil=" + cuil +
+                ", sucursales=" + sucursales +
+                '}';
     }
 }

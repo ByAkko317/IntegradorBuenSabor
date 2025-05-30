@@ -1,4 +1,4 @@
-public class Domicilio {
+public class Domicilio extends Base{
     private String calle;
     private Integer numero, cp;
 
@@ -40,5 +40,15 @@ public class Domicilio {
 
     public void setLocalidad(Localidad localidad) {
         this.localidad = localidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Domicilio{" +
+                "calle='" + calle + '\'' +
+                ", numero=" + numero +
+                ", cp=" + cp +
+                ", localidad=" + localidad +
+                '}';
     }
 }

@@ -1,20 +1,18 @@
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class Sucursal {
+public class Sucursal extends Base{
     private String nombre;
     private LocalTime horarioApertura,horarioCierre;
-    private boolean es_casa_matriz;
 
     private Domicilio domicilio;
-    private List<Categoria> categorias;
+    private Set<Categoria> categorias;
+    private Set<Promocion> promociones;
 
-    public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre, boolean es_casa_matriz) {
+    public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre) {
         this.nombre = nombre;
         this.horarioApertura = horarioApertura;
         this.horarioCierre = horarioCierre;
-        this.es_casa_matriz = es_casa_matriz;
     }
 
     public String getNombre() {
@@ -41,14 +39,6 @@ public class Sucursal {
         this.horarioCierre = horarioCierre;
     }
 
-    public boolean isEs_casa_matriz() {
-        return es_casa_matriz;
-    }
-
-    public void setEs_casa_matriz(boolean es_casa_matriz) {
-        this.es_casa_matriz = es_casa_matriz;
-    }
-
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -57,20 +47,41 @@ public class Sucursal {
         this.domicilio = domicilio;
     }
 
-    public List<Categoria> getCategorias() {
+    public Set<Categoria> getCategorias() {
         return categorias;
     }
 
-    public void setCategorias(List<Categoria> categorias) {
+    public void setCategorias(Set<Categoria> categorias) {
         this.categorias = categorias;
     }
 
+    public Set<Promocion> getPromociones() {return promociones;}
+
+    public void setPromociones(Set<Promocion> promociones) {this.promociones = promociones;}
+
     public void addCategoria(Categoria categoria){
-        if(this.categorias==null){
-            this.categorias=new ArrayList<>();
-        }
-        if(categoria!=null){
-            this.categorias.add(categoria);
-        }
+        if(this.categorias==null)this.categorias=new HashSet<>();
+        if(categoria!=null) this.categorias.add(categoria);
+    }
+    public void removeCategoria(Categoria categoria){
+        if(categoria!=null && this.categorias.contains(categoria)) this.categorias.remove(categoria);
+    }
+
+    public void addPromocion(Promocion promocion){
+        if(this.promociones==null)this.promociones=new HashSet<>();
+        if(promocion!=null)this.promociones.add(promocion);
+    }
+    public void removePromocion(Promocion promocion){
+        if(promocion!=null && this.promociones.contains(promocion))this.promociones.remove(promocion);
+    }
+
+    @Override
+    public String toString() {
+        return "Sucursal{" +
+                "nombre='" + nombre + '\'' +
+                ", horarioApertura=" + horarioApertura +
+                ", horarioCierre=" + horarioCierre +
+                ", domicilio=" + domicilio +
+                '}';
     }
 }

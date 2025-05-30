@@ -1,7 +1,7 @@
-public class Imagen {
-    private String nombre,url;
+public class ImagenArticulo extends Base{
+    private String nombre,url;//añadir id
 
-    public Imagen(String nombre, String url) {
+    public ImagenArticulo(String nombre, String url) {
         this.nombre = nombre;
         this.url = url;
     }
@@ -22,3 +22,4 @@ public class Imagen {
         this.url = url;
     }
 }
+
